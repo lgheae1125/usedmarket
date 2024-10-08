@@ -3,12 +3,13 @@ import React, { ReactNode } from "react";
 interface pageProps {
   children: ReactNode;
   title: string;
+  mx?: string;
 }
 
-function Page({ children, title }: pageProps) {
+function Page({ children, title, mx = "mx-96" }: pageProps) {
   return (
-    <main className="p-4">
-      <h2 className="text-center my-20 text-6xl font-extrabold">{title}</h2>
+    <main className={`p-4 ${mx}`}>
+      <h2 className="text-center my-12 text-4xl font-extrabold">{title}</h2>
       {children}
     </main>
   );

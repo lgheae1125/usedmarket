@@ -23,8 +23,7 @@ function SignUpPage() {
     const confirmPassword = confirmPasswordRef.current!.value;
 
     if (password !== confirmPassword) return alert("password가 맞지 않습니다.");
-    const signUp = await supabase.auth.signUp({ email, password });
-    console.log(signUp);
+    await supabase.auth.signUp({ email, password });
     alert("회원가입 완료");
     router.push("/");
   };
